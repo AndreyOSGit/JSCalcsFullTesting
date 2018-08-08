@@ -1,0 +1,139 @@
+<HTML>
+<HEAD>
+<title>calculator with buttons</title>
+</HEAD>
+<BODY>
+<form name = "calc">
+
+<input id = "in_out" type = "text" >
+<table text-align: center; cellpadding: 0; cellpadding: 0; >
+<tr>
+<td>
+<input id="bt1" type="button" value="1" onClick="fNum(this)">
+</td>
+<td>
+<input id="bt2" type="button" value="2" onClick="fNum(this)">
+</td>
+<td>
+<input id="bt3" type="button" value="3" onClick="fNum(this)">
+</td>
+<td>
+<input id="plus" type="button" value="+" onClick="fOp(this)">
+</td>
+</tr>
+
+<tr>
+<td>
+<input id="bt4" type="button" value="4" onClick="fNum(this)">
+</td>
+<td>
+<input id="bt5" type="button" value="5" onClick="fNum(this)">
+</td>
+<td>
+<input id="bt6" type="button" value="6" onClick="fNum(this)">
+</td>
+<td>
+<input id="minus" type="button" value="-" onClick="fOp(this)">
+</td>
+</tr>
+<tr>
+<td>
+<input id="bt7" type="button" value="7" onClick="fNum(this)">
+</td>
+<td>
+<input id="bt8" type="button" value="8" onClick="fNum(this)">
+</td>
+<td>
+<input id="bt9" type="button" value="9" onClick="fNum(this)">
+</td>
+<td>
+<input id="multiply" type="button" value="*" onClick="fOp(this)">
+</td>
+</tr>
+<tr>
+<td>
+<input style = "opacity: 0"  type="button" value=" " >
+</td>
+<td>
+<input id="bt0" type="button" value="0" onClick="fNum(this)">
+</td>
+<td>
+<input style = "opacity: 0"  type="button" value=" " >
+</td>
+<td>
+<input id="divide" type="button" value="/" onClick="fOp(this)">
+</td>
+</tr>
+<tr>
+<td>
+<input style = "opacity: 0"  type="button" value=" " >
+</td>
+<td>
+<input style = "opacity: 0"  type="button" value=" " >
+</td>
+<td>
+<input style = "opacity: 0"  type="button" value=" " >
+</td>
+<td>
+<input id="equal" type="button" value="=" onClick="startCalc()">
+</td>
+</tr>
+</table>
+</form>
+<hidden id = "hide_op" value = "">
+
+
+ <script language = "JavaScript" src="calculate.js"></script>
+
+
+<script language = "JavaScript">
+	 var a = 0; 
+	 var b = 0;
+	 var operation = "";
+	 var c = 0;
+	 
+function fNum(e)
+{
+	calc.in_out.value += e.value;  //po nagatiu knopki vozvraat znacheniya chto knopka nagata
+	hide_op.value = e.value;
+	}
+function fOp(sign)
+	{
+		vvodA(calc.in_out.value);
+		calc.in_out.value = "";
+		vvodOp( sign.value );
+		hide_op.value = sign.value;	
+	}
+
+function vvodA(v_a)
+{	
+	 a = parseInt(v_a);  
+	 
+}
+function vvodB(v_b)
+{	
+	 b = parseInt(v_b);
+	
+}
+function vvodOp(v_op)
+{	
+	 operation = v_op;
+		
+}
+
+
+function out(out_text)
+{
+	calc.in_out.value = out_text;
+}
+function startCalc()
+	{	
+		
+		vvodB(calc.in_out.value);
+		out(calculate());
+		hide_op.value = '=';	
+	}
+ 
+</script>
+</BODY>
+</HTML>

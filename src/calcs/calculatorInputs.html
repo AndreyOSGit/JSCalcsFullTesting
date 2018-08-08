@@ -1,0 +1,44 @@
+<HTML>
+<HEAD > </HEAD>
+<script>
+function calc() 
+	{
+	
+		var a = +num1.value; 
+		var b = +num2.value;
+		var op = oper.value;
+		var c = 0;
+		switch (op)
+		{
+		case '+': c = a + b; break;
+		case '-': c = a - b; break;
+		case '*': c = a * b; break;
+		case '/': c = a / b; break;
+		default: alert("Takaya operaciya ne poddergivaetsya !!! "); break;
+		}
+		
+		res.value = c;
+		
+	}
+</script>
+
+<!-- + используется для приведени к числу-->
+
+<BODY>
+<p>
+<input type = 'text' id='num1' style='text-align:right' value=''> </input>
+</p>
+<p>
+<input type = 'text' id='oper' style='text-align:right' value='+'> </input> 
+</p>
+<p>
+<input type = 'text' id='num2' style='text-align:right' value=''>  </input> 
+</p>
+<p>
+<input type = 'button' id='calculate' value='calculate' onclick='calc()'></input> 
+</p>
+<p>
+<input type = 'text' readonly='readonly' id='res' style='text-align:right' value='result' > 
+</p>
+</BODY>
+</HTML>
